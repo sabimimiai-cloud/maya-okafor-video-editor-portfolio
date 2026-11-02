@@ -2,9 +2,9 @@ import { Project, ServiceItem, ProcessStep } from '../types/portfolio';
 import { VIDEO_ASSETS } from './videoAssets';
 
 export const SHOWREEL_POSTER_IMAGE = '/posters/showreel-poster.jpg';
-export const ABOUT_MAYA_IMAGE = '/src/assets/images/maya_okafor_creator_portrait_1792873988776.jpg';
-export const BEFORE_RAW_IMAGE = '/src/assets/images/lagos_founder_raw_camera_1792876107356.jpg';
-export const AFTER_FINAL_IMAGE = '/src/assets/images/reel_lagos_founder_1792875124040.jpg';
+export const ABOUT_MAYA_IMAGE = '/images/maya_okafor_creator_portrait_1792873988776.jpg';
+export const BEFORE_RAW_IMAGE = '/images/lagos_founder_raw_camera_1792876107356.jpg';
+export const AFTER_FINAL_IMAGE = '/images/reel_lagos_founder_1792875124040.jpg';
 
 export const PROJECTS: Project[] = [
   {
