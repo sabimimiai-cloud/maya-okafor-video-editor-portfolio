@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', 'Manrope', system-ui, -apple-system, sans-serif;
+    color-scheme: dark light;
+    --charcoal: #111111;
+    --charcoal-surface: #1a1a1a;
+    --charcoal-border: #292929;
+    --cream: #F6F1E8;
+    --cream-surface: #EDE7DC;
+    --cream-border: #E0D9CD;
+    --soft-white: #FFFDF9;
+    --coral: #FF5A4F;
+    --coral-hover: #E0483E;
+    --muted-grey: #737373;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+    background-color: #111111;
+    color: #F6F1E8;
+    font-size: 16px;
+  }
+
+  body {
+    background-color: #111111;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.5;
+  }
+
+  ::selection {
+    background-color: rgba(255, 90, 79, 0.35);
+    color: #FFFFFF;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111111;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2b2b2b;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #404040;
+}
+
+/* Restrained scroll reveal transitions */
+.reveal-base {
+  transition-property: opacity, transform;
+  transition-duration: 600ms;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-hidden {
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Accessibility: Honor user's reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal-hidden {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
