@@ -1,7 +1,7 @@
 import { Project, ServiceItem, ProcessStep } from '../types/portfolio';
 import { VIDEO_ASSETS } from './videoAssets';
 
-export const SHOWREEL_POSTER_IMAGE = '/src/assets/images/showreel_vertical_poster_1792875143281.jpg';
+export const SHOWREEL_POSTER_IMAGE = '/posters/showreel-poster.jpg';
 export const ABOUT_MAYA_IMAGE = '/src/assets/images/maya_okafor_creator_portrait_1792873988776.jpg';
 export const BEFORE_RAW_IMAGE = '/src/assets/images/lagos_founder_raw_camera_1792876107356.jpg';
 export const AFTER_FINAL_IMAGE = '/src/assets/images/reel_lagos_founder_1792875124040.jpg';
@@ -15,7 +15,7 @@ export const PROJECTS: Project[] = [
     tagline: 'Talking-head edit — hook, captions, punch-ins & B-roll.',
     description: 'Raw webcam and phone video of a Nigerian tech founder restructured into a fast-paced, high-credibility LinkedIn and Reels video.',
     duration: '0:48',
-    image: '/src/assets/images/reel_lagos_founder_1792875124040.jpg',
+    image: '/posters/lagos-founder-poster.jpg',
     videoUrl: VIDEO_ASSETS.lagosFounder,
     caseStudy: {
       challenge: 'The original 20-minute recording had valuable business insights, but opened with 40 seconds of rambling preamble and long dead pauses that caused instant drop-off.',
@@ -31,7 +31,7 @@ export const PROJECTS: Project[] = [
     tagline: 'Sensory food storytelling with fast cuts and rhythmic sound design.',
     description: 'A social-first promo for a Lagos food brand showcasing party jollof rice and smoked suya with sensory ASMR sound design.',
     duration: '0:34',
-    image: '/src/assets/images/reel_nigerian_food_brand_1792875125172.jpg',
+    image: '/posters/food-brand-poster.jpg',
     videoUrl: VIDEO_ASSETS.foodBrand,
     caseStudy: {
       challenge: 'Raw kitchen recordings were chaotic, un-graded, and felt like unedited phone video rather than an appetizing brand campaign.',
@@ -47,7 +47,7 @@ export const PROJECTS: Project[] = [
     tagline: 'Dynamic multi-cam clip mining a conversation for its fiery climax.',
     description: 'Mining a 90-minute Lagos creative podcast for a fiery debate moment, edited with dynamic multi-cam switches and highlighted captions.',
     duration: '0:52',
-    image: '/src/assets/images/reel_lagos_podcast_1792875125104.jpg',
+    image: '/posters/podcast-poster.jpg',
     videoUrl: VIDEO_ASSETS.podcast,
     caseStudy: {
       challenge: 'The full podcast episode had great energy, but wide studio shots felt static on mobile feeds and the initial setup took too long to get to the clash.',
@@ -63,7 +63,7 @@ export const PROJECTS: Project[] = [
     tagline: 'Cinematic product pacing and color styling for a luxury drop.',
     description: 'Social video campaign for a Nigerian botanical skincare brand, using rhythmic speed ramps, golden hour lighting, and sleek typography.',
     duration: '0:38',
-    image: '/src/assets/images/reel_fashion_beauty_1792875124748.jpg',
+    image: '/posters/fashion-beauty-poster.jpg',
     videoUrl: VIDEO_ASSETS.fashionBeauty,
     caseStudy: {
       challenge: 'Video was shot in flat camera profiles without music or cohesive pacing, looking dull on mobile screens.',

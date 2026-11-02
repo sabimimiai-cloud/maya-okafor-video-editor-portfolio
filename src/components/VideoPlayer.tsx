@@ -187,6 +187,7 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({
     const newProgress = Math.max(0, Math.min(100, (clickX / rect.width) * 100));
     setProgress(newProgress);
     video.currentTime = (newProgress / 100) * video.duration;
+    setHasStarted(true);
     if (hasEnded) setHasEnded(false);
   };
 
@@ -287,24 +288,38 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({
           muted={isMuted}
           loop={loop}
           preload="metadata"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover z-0"
         />
       ) : (
         <img
           src={poster}
           alt={title || 'Video preview poster'}
           referrerPolicy="no-referrer"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover z-0"
+        />
+      )}
+
+      {/* Visual Poster / Thumbnail (Guarantees strong representative frame is visible before playback) */}
+      {poster && hasPlayableVideo && (
+        <img
+          src={poster}
+          alt={title || 'Video preview poster'}
+          loading="eager"
+          decoding="async"
+          referrerPolicy="no-referrer"
+          className={`absolute inset-0 w-full h-full object-cover pointer-events-none transition-opacity duration-300 z-[1] ${
+            hasStarted ? 'opacity-0' : 'opacity-100'
+          }`}
         />
       )}
 
       {/* Scrim Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-black/30 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-black/30 pointer-events-none z-[2]" />
 
       {/* Play / Pause Center Trigger (Shown when video is paused or before start) */}
       {hasPlayableVideo && !hasEnded && (
         <div
-          className={`absolute inset-0 flex items-center justify-center transition-opacity duration-200 pointer-events-none ${
+          className={`absolute inset-0 flex items-center justify-center transition-opacity duration-200 pointer-events-none z-10 ${
             isPlaying && hasStarted ? 'opacity-0 group-hover:opacity-100' : 'opacity-100'
           }`}
         >
